@@ -6,7 +6,7 @@
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/amirraminfar/.gitignore
 	autocrlf = input
 [color]
 	ui = true
