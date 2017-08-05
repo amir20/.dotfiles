@@ -1,0 +1,21 @@
+[alias]
+	s = status -sb
+	co = checkout
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all	
+	ignore = !git update-index --assume-unchanged 
+	unignore = !git update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep ^[a-z]
+[core]
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[color]
+	ui = true
+[push]
+	default = current
+	followTags = true
+[help]
+	autocorrect = 1
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
