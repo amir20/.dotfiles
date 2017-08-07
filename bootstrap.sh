@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
 set -e
+set -x
+
 sudo -v
 
-# Install brew
-yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# # Install brew if it doesn't already exist
+# command -v brew > /dev/null 2>&1  || (yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
 
-# Install all things brew related 
-brew install ctop git grc httpie jq fzf fasd fish pv progress node pyenv rbenv yarn wget tree tmux the_silver_searcher stow ssh-copy-id; true
-brew install curl --with-nghttp2; true
+# # Install all things brew related 
+# brew install ctop git grc httpie jq fzf fasd fish pv progress node pyenv rbenv yarn wget tree tmux the_silver_searcher stow ssh-copy-id || true
+# brew install curl --with-nghttp2 || true
 
-# Cask install tools
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew cask install java pycharm-ce visual-studio-code docker
+# # Cask install tools
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# brew cask install java pycharm-ce visual-studio-code keepingyouawake docker
 
 # Setup fish 
 grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells

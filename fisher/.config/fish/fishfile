@@ -1,3 +1,4 @@
+fisherman/await
 oh-my-fish/plugin-bang-bang
 0rax/fish-bd
 fisherman/dartfish
@@ -5,9 +6,12 @@ fisherman/docker-completion
 brgmnn/fish-docker-compose
 decors/fish-docker-machine
 oh-my-fish/plugin-fasd
+fisherman/fzf
+fisherman/get
 fisherman/get_file_age
+fisherman/getopts
 fisherman/git_util
-oh-my-fish/plugin-grc
+fisherman/grc
 fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
