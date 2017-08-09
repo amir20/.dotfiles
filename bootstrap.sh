@@ -1,27 +1,40 @@
 #!/usr/bin/env bash
 
 set -e
-set -x
 
-sudo -v
+# Install brew if it doesn't already exist
+command -v brew > /dev/null 2>&1  || (yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
 
-# # Install brew if it doesn't already exist
-# command -v brew > /dev/null 2>&1  || (yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+# Install all things brew related 
+for p in ctop git grc httpie jq fzf fasd fish pv progress node pyenv rbenv yarn wget tree tmux the_silver_searcher stow ssh-copy-id; do    
+    echo -n "Checking for $p..."
+    brew ls | grep -q $p || (echo -n "installing..." && brew install $p)
+    echo
+done
 
-# # Install all things brew related 
-# brew install ctop git grc httpie jq fzf fasd fish pv progress node pyenv rbenv yarn wget tree tmux the_silver_searcher stow ssh-copy-id || true
-# brew install curl --with-nghttp2 || true
+echo "Checking if curl is installed and installing if not..."
+brew ls | grep -q curl || brew install curl --with-nghttp2
 
-# # Cask install tools
-# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-# brew cask install java pycharm-ce visual-studio-code keepingyouawake docker
+echo "Doing brew upgrade..."
+brew upgrade
+
+# Cask install tools
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+for p in java pycharm-ce visual-studio-code keepingyouawake docker; do    
+    echo -n "Checking for cask $p..."
+    brew cask ls | grep -q $p || (echo -n "installing..." && brew cask install $p)
+    echo
+done
 
 # Setup fish 
+echo "Setting up fish..."
 grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells
-chsh -s /usr/local/bin/fish
+test $SHELL = "/usr/local/bin/fish" || chsh -s /usr/local/bin/fish
 
+echo "Setting up fisher..."
 # Install fisher 
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+fish -c 'fisher' || curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
 # Stow fisher
 stow fisher
@@ -29,8 +42,9 @@ stow fisher
 # Run fisher 
 fish -c 'fisher'
 
-# Change operator
+# Change settings for fish plugins
 fish -c 'set -U fish_operator " ⟩ "'
+fish -c 'set -U VIRTUALFISH_PLUGINS "auto_activation"'
 
 
 # Installing vscode plugins 
