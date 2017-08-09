@@ -48,26 +48,11 @@ fish -c 'set -U VIRTUALFISH_PLUGINS "auto_activation"'
 
 
 # Installing vscode plugins 
-code --install-extension EditorConfig.editorconfig
-code --install-extension HookyQR.beautify
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension christian-kohler.npm-intellisense
-code --install-extension christian-kohler.path-intellisense
-code --install-extension codezombiech.gitignore
-code --install-extension donjayamanne.python
-code --install-extension eg2.vscode-npm-script
-code --install-extension flowtype.flow-for-vscode
-code --install-extension k--kato.intellij-idea-keybindings
-code --install-extension kamikillerto.vscode-colorize
-code --install-extension lukehoban.go
-code --install-extension magicstack.magicpython
-code --install-extension octref.vetur
-code --install-extension rebornix.ruby
-code --install-extension ricard.postcss
-code --install-extension robertohuertasm.vscode-icons
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension vmsynkov.colonize
-code --install-extension waderyan.babelrc
+echo "Installing plugins for vscode..."
+plugins=(EditorConfig.editorconfig HookyQR.beautify PeterJausovec.vscode-docker christian-kohler.npm-intellisense christian-kohler.path-intellisense codezombiech.gitignore donjayamanne.python eg2.vscode-npm-script flowtype.flow-for-vscode k--kato.intellij-idea-keybindings kamikillerto.vscode-colorize lukehoban.go magicstack.magicpython octref.vetur rebornix.ruby ricard.postcss robertohuertasm.vscode-icons streetsidesoftware.code-spell-checker vmsynkov.colonize waderyan.babelrc)
+for plugin in ${plugins[*]}; do    
+    code --install-extension $plugin
+done
 
 # Other stow files 
 stow git pep ssh vim 
