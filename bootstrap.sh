@@ -21,7 +21,7 @@ brew upgrade
 # Cask install tools
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-for p in java pycharm-ce visual-studio-code keepingyouawake docker; do    
+for p in java pycharm-ce visual-studio-code keepingyouawake docker insomnia; do    
     echo -n "Checking for cask $p..."
     brew cask ls | grep -q $p || (echo -n "installing..." && brew cask install $p)
     echo
@@ -45,14 +45,6 @@ fish -c 'fisher'
 # Change settings for fish plugins
 fish -c 'set -U fish_operator " ⟩ "'
 fish -c 'set -U VIRTUALFISH_PLUGINS "auto_activation"'
-
-
-# Installing vscode plugins 
-echo "Installing plugins for vscode..."
-plugins=(EditorConfig.editorconfig HookyQR.beautify PeterJausovec.vscode-docker christian-kohler.npm-intellisense christian-kohler.path-intellisense codezombiech.gitignore donjayamanne.python eg2.vscode-npm-script flowtype.flow-for-vscode k--kato.intellij-idea-keybindings kamikillerto.vscode-colorize lukehoban.go magicstack.magicpython octref.vetur rebornix.ruby ricard.postcss robertohuertasm.vscode-icons streetsidesoftware.code-spell-checker vmsynkov.colonize waderyan.babelrc)
-for plugin in ${plugins[*]}; do    
-    code --install-extension $plugin
-done
 
 # Other stow files 
 stow git pep ssh vim 
