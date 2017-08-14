@@ -21,7 +21,7 @@ brew upgrade
 # Cask install tools
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-for p in java pycharm-ce visual-studio-code keepingyouawake docker insomnia; do    
+for p in java pycharm-ce visual-studio-code keepingyouawake docker; do    
     echo -n "Checking for cask $p..."
     brew cask ls | grep -q $p || (echo -n "installing..." && brew cask install $p)
     echo
@@ -29,7 +29,7 @@ done
 
 # Setup fish 
 echo "Setting up fish..."
-grep -q -F '/usr/local/bin/fish' /etc/shells || echo '/usr/local/bin/fish' >> /etc/shells
+grep -q -F '/usr/local/bin/fish' /etc/shells || echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 test $SHELL = "/usr/local/bin/fish" || chsh -s /usr/local/bin/fish
 
 echo "Setting up fisher..."
