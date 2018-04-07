@@ -1,3 +1,4 @@
+fisherman/autojump
 fisherman/await
 oh-my-fish/plugin-bang-bang
 0rax/fish-bd
@@ -11,12 +12,12 @@ fisherman/get
 fisherman/get_file_age
 fisherman/getopts
 fisherman/git_util
-fisherman/grc
 fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
+fisherman/menu
 oh-my-fish/plugin-osx
 fisherman/pwd_is_home
 fisherman/pyenv
 fisherman/rbenv
-oh-my-fish/plugin-virtualfish
+fisherman/z
