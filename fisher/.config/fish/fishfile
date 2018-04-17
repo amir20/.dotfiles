@@ -6,12 +6,14 @@ fisherman/dartfish
 fisherman/docker-completion
 brgmnn/fish-docker-compose
 decors/fish-docker-machine
+fisherman/done
 oh-my-fish/plugin-fasd
 fisherman/fzf
 fisherman/get
 fisherman/get_file_age
 fisherman/getopts
 fisherman/git_util
+fisherman/gitignore
 fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
@@ -20,4 +22,5 @@ oh-my-fish/plugin-osx
 fisherman/pwd_is_home
 fisherman/pyenv
 fisherman/rbenv
+fisherman/spin
 fisherman/z
