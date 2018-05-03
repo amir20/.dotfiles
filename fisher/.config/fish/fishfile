@@ -19,6 +19,7 @@ fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
 oh-my-fish/plugin-osx
+fisherman/pipenv
 fisherman/pwd_is_home
 fisherman/pyenv
 fisherman/rbenv
