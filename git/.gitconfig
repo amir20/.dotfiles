@@ -18,3 +18,5 @@
 [user]
 	name = Amir Raminfar
 	email = findamir@gmail.com
+[grep]
+	lineNumber = true
