@@ -3,6 +3,7 @@ fisherman/await
 oh-my-fish/plugin-bang-bang
 0rax/fish-bd
 fisherman/dartfish
+oh-my-fish/plugin-direnv
 fisherman/docker-completion
 brgmnn/fish-docker-compose
 decors/fish-docker-machine
@@ -19,7 +20,6 @@ fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
 oh-my-fish/plugin-osx
-fisherman/pipenv
 fisherman/pwd_is_home
 fisherman/pyenv
 fisherman/rbenv
