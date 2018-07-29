@@ -19,6 +19,7 @@ fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/menu
+patrickf3139/open_github
 oh-my-fish/plugin-osx
 fisherman/pwd_is_home
 fisherman/pyenv
