@@ -15,6 +15,7 @@ fisherman/get_file_age
 fisherman/getopts
 fisherman/git_util
 fisherman/gitignore
+fisherman/grc
 fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
