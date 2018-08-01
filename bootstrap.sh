@@ -6,26 +6,8 @@ set -e
 command -v brew > /dev/null 2>&1  || (yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
 
 # Install all things brew related
-for p in ctop git terminal-notifier grc httpie jq fzf fasd fish pv progress node parallel pyenv rbenv yarn wget tree tmux the_silver_searcher stow n ssh-copy-id; do
-    echo -n "Checking for $p..."
-    brew ls | grep -q $p || (echo -n "installing..." && brew install $p)
-    echo
-done
-
-echo "Checking if curl is installed and installing if not..."
-brew ls | grep -q curl || brew install curl --with-nghttp2
-
-echo "Doing brew upgrade..."
-brew upgrade
-
-# Cask install tools
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-for p in java pycharm-ce visual-studio-code keepingyouawake docker alfred; do
-    echo -n "Checking for cask $p..."
-    brew cask ls | grep -q $p || (echo -n "installing..." && brew cask install $p)
-    echo
-done
+brew bundle
 
 # Setup fish
 echo "Setting up fish..."
