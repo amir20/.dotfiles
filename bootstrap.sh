@@ -28,7 +28,7 @@ fish -c 'fisher'
 fish -c 'set -U fish_operator " ⟩ "'
 
 # Other stow files
-stow git pep ssh vim
+stow git pep ssh vim fish
 
 # Install vim-sensible
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
