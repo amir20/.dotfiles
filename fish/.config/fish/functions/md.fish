@@ -1,4 +1,4 @@
-function mkdir --description 'Create a directory and set CWD'
+function md --description 'Create a directory and set CWD'
 	command mkdir $argv
     if test $status = 0
         switch $argv[(count $argv)]
