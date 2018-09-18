@@ -5,6 +5,7 @@ oh-my-fish/plugin-bang-bang
 amir20/dartfish
 oh-my-fish/plugin-direnv
 brgmnn/fish-docker-compose
+barnybug/docker-fish-completion
 decors/fish-docker-machine
 fisherman/done
 oh-my-fish/plugin-fasd
