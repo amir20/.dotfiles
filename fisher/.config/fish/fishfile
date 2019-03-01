@@ -1,12 +1,6 @@
 amir20/dartfish
 barnybug-archive/docker-fish-completion
 decors/fish-docker-machine
-fisherman/git_util
-fisherman/grc
-fisherman/host_info
-fisherman/humanize_duration
-fisherman/last_job_id
-fisherman/pwd_is_home
 jethrokuan/fzf
 jethrokuan/z
 oh-my-fish/plugin-bang-bang
