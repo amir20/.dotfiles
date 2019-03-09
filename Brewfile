@@ -4,7 +4,6 @@ tap "homebrew/core"
 brew "autossh"
 brew "asdf"
 brew "ctop"
-brew "curl", args: ["with-nghttp2"]
 brew "direnv"
 brew "exa"
 brew "fasd"
