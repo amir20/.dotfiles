@@ -3,6 +3,5 @@
 *.iml
 npm-debug.log
 *~
-.vscode
 .direnv
 .envrc
