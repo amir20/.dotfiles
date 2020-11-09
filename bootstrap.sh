@@ -32,5 +32,6 @@ stow git starship pep ssh vim fish rg
 
 # Install vim-sensible
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-(cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible.git)
+git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/packages/start/fzf.vim
+(cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible.git &&  git clone https://github.com/itchyny/lightline.vim)
 
