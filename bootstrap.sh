@@ -16,7 +16,7 @@ test $SHELL = "/usr/local/bin/fish" || chsh -s /usr/local/bin/fish
 
 echo "Setting up fisher..."
 # Install fisher
-fish -c 'fisher' || curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Stow fisher
 stow fisher
