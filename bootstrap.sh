@@ -24,9 +24,6 @@ stow fisher
 # Run fisher
 fish -c 'fisher'
 
-# Change settings for fish plugins
-fish -c 'set -U fish_operator " ⟩ "'
-
 # Other stow files
 stow git starship pep ssh vim fish rg
 
