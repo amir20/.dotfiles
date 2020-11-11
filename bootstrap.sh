@@ -19,13 +19,11 @@ echo "Setting up fisher..."
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Stow fisher
-stow fisher
+stow fisher git starship pep ssh vim fish rg
 
 # Run fisher
-fish -c 'fisher'
+fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher update'
 
-# Other stow files
-stow git starship pep ssh vim fish rg
 
 # Install vim-sensible
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
