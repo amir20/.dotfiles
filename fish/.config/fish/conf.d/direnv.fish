@@ -1,1 +1,1 @@
-pyenv init - | source
+direnv hook fish | source
