@@ -24,9 +24,9 @@ stow fisher git starship pep ssh vim fish rg
 # Run fisher
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher update'
 
+fish ./env.fish
 
 # Install vim-sensible
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/junegunn/fzf.vim.git ~/.vim/pack/packages/start/fzf.vim
 (cd ~/.vim/bundle && git clone https://github.com/tpope/vim-sensible.git &&  git clone https://github.com/itchyny/lightline.vim)
-
