@@ -15,3 +15,5 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 nnoremap <silent> <C-f> :Files<CR>
+set hlsearch
+set cursorline
