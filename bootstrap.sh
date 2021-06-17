@@ -19,7 +19,7 @@ echo "Setting up fisher..."
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Stow fisher
-stow fisher git starship pep ssh vim fish rg
+stow fisher lsd git starship pep ssh vim fish rg
 
 # Run fisher
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher update'
