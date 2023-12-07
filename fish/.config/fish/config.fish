@@ -3,4 +3,5 @@ if status is-interactive
     abbr -a -- g git
     abbr -a -- - 'cd -'
     abbr -a -- l ls
+    abbr -a -- c code .
 end
