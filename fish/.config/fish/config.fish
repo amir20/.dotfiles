@@ -5,7 +5,3 @@ if status is-interactive
     abbr -a -- l ls
     abbr -a -- c code .
 end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
