@@ -1,6 +1,4 @@
 jorgebucaran/fisher
-barnybug-archive/docker-fish-completion
-decors/fish-docker-machine
-oh-my-fish/plugin-bang-bang
-jethrokuan/fzf
-0rax/fish-bd
+patrickf1/fzf.fish
+nickeb96/puffer-fish
+patrickf1/colored_man_pages.fish
