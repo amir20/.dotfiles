@@ -1,35 +1,54 @@
 [alias]
 	s = status -sb
+	d = difftool
 	co = checkout
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ignore = !git update-index --assume-unchanged
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
 	cof = !git checkout $(git branch -r | fzf)
+
 [core]
 	excludesfile = /Users/amirraminfar/.gitignore
 	autocrlf = input
+
 [color]
 	ui = true
+
 [push]
 	default = current
 	followTags = true
+
 [help]
 	autocorrect = 1
+
 [user]
 	name = Amir Raminfar
 	email = findamir@gmail.com
 	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDeKwDjD9KVYLa8WTEdlzqpg4KzRG0Ed8KT45I0Zp3HxGyXySLDi3Y7b8/uJDi6bTJEGOh++iJfAZvmDI7LzeM3nDpUIsDv2xHxCxMpCa3IQ2XoLsMBmDCBbJze/8mPlfPY1WTbJks6tLJbxfLCsdPOwE56H1CuZJGHCbd+vnLW0wvqW54Z0mjv60i1EiH9u9VuDxBsSe65hLAcz0XQZ7CUx/TJ0BCXz31OfLBviJ7V+1X8e6pU7E8n/liEdQqwdn7UNE+wWQEZbZUtlntblBfRU5gaquGtMvJpfEfCavGs6ZXGA3nyVfuHHsjoHLyZHNjVG9uZ/fcxvrBz93qe4kg5PHiQJzzPOrlzqh5gDGIVsxzfF3Xqdi4V9DpfIVC62QHVTW5NvX9AvgYM0vSECaLyXe9XTvDR8YHJLkzykIYSCAWRJFlfM8qXF5QBSa6og80B9Ej3wGefRB03ciLXMb9NbSZxYMsn8SMG0tL6qpF3VZl+jcHek8nteT0XSxk9Jppt4I2ZBzxJB2fbG/hZvuBhD3Qa7xL1EeETgpdPFNVHXCJbGDIHV2dZU0aqkR5iNcxsp9wBd1jUewr+hmdphzvBXKt+MeT2qVBp1p3yp3+3LOK65XcKmyirH7jKE+hB0nUmkeUSshGIGdLFdMAP091ZHUi/LG92nYOCe63l7t7Ydw==
 [grep]
 	lineNumber = true
+
 [log]
   date = relative
+
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+
 [pull]
 	rebase = true
 
-[pager]
+[diff]
+		tool = difftastic
+
+[difftool]
+		prompt = false
+
+[difftool "difftastic"]
+		cmd = difft "$LOCAL" "$REMOTE"     
+
+[pager]		
+		difftool = true
     diff = delta
     log = delta
     reflog = delta
@@ -42,12 +61,14 @@
     navigate = true
 		line-numbers = true
 
-
 [interactive]
     diffFilter = delta --color-only
+
 [gpg]
 	format = ssh
+
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
 [commit]
 	gpgsign = true

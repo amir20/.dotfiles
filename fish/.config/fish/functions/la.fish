@@ -1,4 +1,4 @@
 # Defined in - @ line 1
 function la
-  ls -la $argv;
+  ls -lA $argv;
 end
