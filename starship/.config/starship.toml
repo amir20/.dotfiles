@@ -1,5 +1,18 @@
+right_format = """$time"""
+
+
 [directory]
 fish_style_pwd_dir_length = 1
 
 [docker_context]
 disabled = false
+
+[direnv]
+disabled = false
+
+
+[time]
+disabled = false
+use_12hr = true
+time_format = '%_H:%M:%S'
+format = '[$time]($style)'
