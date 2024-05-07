@@ -1,3 +1,4 @@
+brew "atuin"
 brew "direnv"
 brew "fd"
 brew "sd"
