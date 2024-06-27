@@ -4,6 +4,7 @@ if status is-interactive
     abbr -a -- - 'cd -'
     abbr -a -- l ls
     abbr -a -- c code .
+    abbr -a -- d docker
     atuin init fish --disable-up-arrow | source
 end
 
