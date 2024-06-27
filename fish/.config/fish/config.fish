@@ -7,3 +7,6 @@ if status is-interactive
     atuin init fish --disable-up-arrow | source
 end
 
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
