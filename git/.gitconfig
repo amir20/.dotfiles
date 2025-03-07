@@ -9,7 +9,7 @@
 	cof = !git checkout $(git branch -r | fzf)
 
 [core]
-	excludesfile = /Users/amirraminfar/.gitignore
+	excludesFile = ~/.gitignore
 	autocrlf = input
 
 [color]
