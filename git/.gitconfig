@@ -18,6 +18,7 @@
 [push]
 	default = current
 	followTags = true
+	autoSetupRemote = true
 
 [help]
 	autocorrect = 1
