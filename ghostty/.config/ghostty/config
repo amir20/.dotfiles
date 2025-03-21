@@ -1,0 +1,8 @@
+theme = Ayu Mirage
+keybind = cmd+shift+right=next_tab
+keybind = cmd+shift+left=previous_tab
+foreground = #fefefe
+background = #1d2021
+font-style-bold = bold
+bold-is-bright = true
+font-thicken = true
