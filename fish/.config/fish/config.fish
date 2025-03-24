@@ -11,3 +11,8 @@ end
 
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+
+if test -f ~/.orbstack/shell/init.fish
+    source ~/.orbstack/shell/init.fish 2>/dev/null || :
+end
