@@ -2,7 +2,7 @@
 	s = status -sb
 	d = difftool
 	co = checkout
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	lol = log --graph --decorate --pretty=format:'%C(auto)%h %d %s [%ad | %ar]' --abbrev-commit --all --date=short
 	ignore = !git update-index --assume-unchanged
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
@@ -46,9 +46,9 @@
 		prompt = false
 
 [difftool "difftastic"]
-		cmd = difft "$LOCAL" "$REMOTE"     
+		cmd = difft "$LOCAL" "$REMOTE"
 
-[pager]		
+[pager]
 		difftool = true
     diff = delta
     log = delta
