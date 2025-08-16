@@ -16,3 +16,6 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 if test -f ~/.orbstack/shell/init.fish
     source ~/.orbstack/shell/init.fish 2>/dev/null || :
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/amirraminfar/.lmstudio/bin
