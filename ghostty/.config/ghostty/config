@@ -8,3 +8,8 @@ font-thicken = true
 cursor-style-blink = false
 cursor-style = block
 shell-integration-features = no-cursor
+
+# Zellij
+macos-option-as-alt = left
+keybind = alt+left=unbind
+keybind = alt+right=unbind
