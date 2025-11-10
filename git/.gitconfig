@@ -2,7 +2,7 @@
 	s = status -sb
 	d = difftool
 	co = checkout
-	lol = log --graph --decorate --pretty=format:'%C(auto)%h %d %s [%ad | %ar]' --abbrev-commit --all --date=short
+	lol = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --all
 	ignore = !git update-index --assume-unchanged
 	unignore = !git update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep ^[a-z]
@@ -31,7 +31,10 @@
 	lineNumber = true
 
 [log]
-  date = relative
+    date = relative
+    graph = true
+    abbrevCommit = true
+    decorate = auto
 
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
