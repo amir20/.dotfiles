@@ -1,16 +1,30 @@
-theme = Ayu Mirage
-keybind = cmd+shift+right=next_tab
-keybind = cmd+shift+left=previous_tab
+# Colors
+theme = "Ayu Mirage"
 foreground = #fefefe
 background = #1d2021
-bold-is-bright = true
+
+# Keybinds
+keybind = cmd+shift+right=next_tab
+keybind = cmd+shift+left=previous_tab
+
+# Fonts
 font-thicken = true
+
+# Cursor
 cursor-style-blink = false
 cursor-style = block
+
+# Shell
 shell-integration-features = no-cursor
 
+# Window
 window-width = 170
 window-height = 43
 
+# Clipboard
 clipboard-read = allow
 clipboard-write = allow
+
+# Macos
+auto-update-channel = tip
+macos-icon = retro
