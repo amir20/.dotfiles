@@ -16,3 +16,6 @@ disabled = false
 use_12hr = true
 time_format = '%_H:%M:%S'
 format = '[$time]($style)'
+
+[git_metrics]
+disabled = false
