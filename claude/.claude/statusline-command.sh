@@ -86,8 +86,9 @@ if [ -n "$used_pct" ]; then
     fi
   }
   token_info=""
-  if [ -n "$input_tokens" ] && [ -n "$ctx_size" ]; then
-    token_info=" ${DIM}$(fmt_tokens "$input_tokens")/$(fmt_tokens "$ctx_size")${RESET}"
+  if [ -n "$ctx_size" ]; then
+    used_tokens=$(awk -v c="$ctx_size" -v p="$used_pct" 'BEGIN { printf "%d", c * p / 100 }')
+    token_info=" ${DIM}$(fmt_tokens "$used_tokens")/$(fmt_tokens "$ctx_size")${RESET}"
   fi
 
   output="${output}$(printf " ${DIM}|${RESET} ${bcolor}%s${RESET}${token_info} ${DIM}%s%%${RESET}" "$bar" "$pct")"
