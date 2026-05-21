@@ -8,6 +8,9 @@ keybind = cmd+shift+right=next_tab
 keybind = cmd+shift+left=previous_tab
 
 # Fonts
+font-family = "Ioskeley Mono Term"
+
+font-size = 14
 font-thicken = true
 
 # Cursor
