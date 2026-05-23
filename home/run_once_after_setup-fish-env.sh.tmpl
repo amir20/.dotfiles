@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v fish > /dev/null 2>&1; then
+    echo "fish not found in PATH; skipping universal env setup" >&2
+    exit 0
+fi
+
+fish -c 'set -Ux RIPGREP_CONFIG_PATH $HOME/.ripgreprc'
+fish -c 'set -Ux FNM_COREPACK_ENABLED true'
+fish -c 'set -Ux COREPACK_ENABLE_DOWNLOAD_PROMPT 0'
+
+fish -c 'abbr -a -U -- - "cd -"'
+fish -c 'abbr -a -U -- l ls'

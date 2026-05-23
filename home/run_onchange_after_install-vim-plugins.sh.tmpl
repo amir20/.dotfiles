@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Re-run whenever the .vimrc changes.
+# vimrc hash: {{ include "dot_vimrc" | sha256sum }}
+
+if ! command -v vim > /dev/null 2>&1; then
+    echo "vim not found in PATH; skipping plugin install" >&2
+    exit 0
+fi
+
+vim +PlugInstall +qall || true
