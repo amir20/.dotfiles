@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+FISH_PATH="$(command -v fish || true)"
+if [ -z "$FISH_PATH" ]; then
+    echo "fish not found in PATH; skipping shell setup" >&2
+    exit 0
+fi
+
+# Ensure fish is listed as a valid login shell
+if ! grep -q -F "$FISH_PATH" /etc/shells; then
+    echo "$FISH_PATH" | sudo tee -a /etc/shells
+fi
+
+# Make fish the default shell if it isn't already
+if [ "${SHELL:-}" != "$FISH_PATH" ]; then
+    chsh -s "$FISH_PATH"
+fi
