@@ -3,6 +3,7 @@ theme = "Ayu Mirage"
 foreground = #fefefe
 background = #1d2021
 window-colorspace = display-p3
+background-blur = true
 
 # Keybinds
 keybind = cmd+shift+right=next_tab
@@ -12,6 +13,7 @@ keybind = cmd+shift+left=previous_tab
 font-family = "Ioskeley Mono Term"
 font-size = 13
 font-thicken = true
+adjust-cell-height = 8%
 
 # Cursor
 cursor-style-blink = false
@@ -23,6 +25,11 @@ shell-integration-features = no-cursor
 # Window
 window-width = 170
 window-height = 43
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+resize-overlay = never
+confirm-close-surface = false
 
 # Clipboard
 clipboard-read = allow
@@ -31,3 +38,4 @@ clipboard-write = allow
 # Macos
 auto-update-channel = tip
 macos-icon = retro
+macos-titlebar-style = tabs
