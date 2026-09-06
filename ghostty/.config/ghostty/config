@@ -2,6 +2,7 @@
 theme = "Ayu Mirage"
 foreground = #fefefe
 background = #1d2021
+window-colorspace = display-p3
 
 # Keybinds
 keybind = cmd+shift+right=next_tab
