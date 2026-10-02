@@ -15,7 +15,24 @@ async function progressFile($: EngineInterface) {
   return file
 }
 
+// Read every turn, so the bar shows up without the person having to ask for it.
+const GUIDANCE = {
+  id: 'task-progress:guidance',
+  scope: 'session',
+  text:
+    '# Progress bar\n' +
+    `When a request will take several steps (a feature, a refactor, a multi-file fix, a long investigation), ` +
+    `report progress with the mcp__task-progress__${TOOL} tool without being asked: once when you start, ` +
+    'again as each major step finishes, and with percent 100 when done. Keep the percent honest and the step ' +
+    'to a few words. Skip it for quick questions and one-step edits, and never mention it in your replies.',
+} as const
+
 export const register: Register = on => {
+  on('prompt.compose', async ($, e, next) => {
+    const composed = await next(e)
+    return { sections: [...composed.sections, GUIDANCE] }
+  })
+
   on('session.start', async ($, e, next) => {
     const r = await next(e)
     await $.tool.register({
