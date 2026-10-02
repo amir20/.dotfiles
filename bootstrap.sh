@@ -23,6 +23,13 @@ fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher install j
 # Stow configs
 stow fisher lsd git starship pep ssh vim fish rg tmux ghostty claude
 
+# Claude Code settings: merge the shared keys into ~/.claude/settings.json rather than
+# linking it, so machine-only keys (autoMode, anything /config writes) stay out of git.
+mkdir -p ~/.claude
+test -f ~/.claude/settings.json || echo '{}' > ~/.claude/settings.json
+jq -s '.[0] * .[1]' ~/.claude/settings.json claude.settings.json > ~/.claude/settings.json.tmp
+mv ~/.claude/settings.json.tmp ~/.claude/settings.json
+
 # Run fisher
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher update'
 

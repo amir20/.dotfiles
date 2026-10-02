@@ -1,0 +1,1 @@
+{ "name": "long-command", "version": "0.1.0", "description": "A toast when a shell command that ran over 45 seconds finishes" }

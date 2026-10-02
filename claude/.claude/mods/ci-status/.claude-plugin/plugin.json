@@ -1,0 +1,1 @@
+{ "name": "ci-status", "version": "0.1.0", "description": "Shows GitHub Actions status for the checked-out commit in the status line" }

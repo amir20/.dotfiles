@@ -1,1 +1,4 @@
 .DS_Store
+# Claude Code lays these into each mod when it loads it
+claude/.claude/mods/*/.claude-plugin/types/
+claude/.claude/mods/*/tsconfig.json
