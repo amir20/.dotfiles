@@ -21,6 +21,7 @@ cursor-style = block
 
 # Shell
 shell-integration-features = no-cursor
+bell-features = system,attention,title,border
 
 # Window
 window-width = 170
