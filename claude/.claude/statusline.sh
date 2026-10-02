@@ -135,6 +135,22 @@ if [ -n "$top" ] && [ -s "$seg_file" ] && [ $(( $(date +%s) - $(stat -f %m "$seg
   done < "$seg_file"
 fi
 
+# Task progress, written by the task-progress mod as `percent<TAB>step` per session.
+# Ignored once 30 minutes stale, so an abandoned task does not linger.
+SID=$(printf '%s' "$input" | jq -r '.session_id // ""')
+prog_file="$HOME/.cache/claude-progress/$SID"
+if [ -n "$SID" ] && [ -s "$prog_file" ] && [ $(( $(date +%s) - $(stat -f %m "$prog_file") )) -lt 1800 ]; then
+  IFS=$'\t' read -r prog_pct prog_step < "$prog_file"
+  if [ "$prog_pct" -ge 0 ] 2>/dev/null; then
+    prog_fill=""; prog_empty=""
+    prog_full=$(( prog_pct * 12 / 100 ))
+    for ((i=0;i<prog_full;i++)); do prog_fill+="█"; done
+    for ((i=prog_full;i<12;i++)); do prog_empty+="░"; done
+    prog_col=$BLUE; [ "$prog_pct" -ge 100 ] && prog_col=$GREEN
+    right1+="${SEP}${prog_col}${prog_fill}${DIM}${prog_empty}${R} ${prog_col}${prog_pct}%${R} ${GRAY}${prog_step}${R}"
+  fi
+fi
+
 if [ "$ADD" != "0" ] || [ "$DEL" != "0" ]; then
   line1+="${SEP}${GREEN}+${ADD}${R} ${RED}-${DEL}${R}"
 fi
