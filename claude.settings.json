@@ -12,6 +12,6 @@
   "skipWorkflowUsageWarning": true,
   "agentPushNotifEnabled": true,
   "env": {
-    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/ci-status:~/.claude/mods/long-command"
+    "CLAUDE_CODE_PLUGIN_DIRS": "~/.claude/mods/ci-status:~/.claude/mods/long-command:~/.claude/mods/task-progress"
   }
 }
