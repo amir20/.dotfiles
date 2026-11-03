@@ -21,7 +21,7 @@ echo "Setting up fisher..."
 fish -c 'fisher' || fish -c 'curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Stow configs
-stow fisher lsd git starship pep ssh vim fish rg tmux ghostty claude
+stow fisher lsd git starship pep ssh vim fish rg tmux ghostty rex claude
 
 # Claude Code settings: merge the shared keys into ~/.claude/settings.json rather than
 # linking it, so machine-only keys (autoMode, anything /config writes) stay out of git.
