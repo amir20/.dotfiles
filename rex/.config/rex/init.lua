@@ -12,6 +12,6 @@ rex.bind("opt+cmd+right", "pane.split.right")
 rex.bind("shift+cmd+up", "client.tab.previous")
 rex.bind("shift+cmd+down", "client.tab.next")
 
--- Switch sessions with opt+cmd+up/down
-rex.bind("opt+cmd+up", "session.previous")
-rex.bind("opt+cmd+down", "session.next")
+-- Switch sessions with shift+opt+up/down
+rex.bind("shift+opt+up", "session.previous")
+rex.bind("shift+opt+down", "session.next")
